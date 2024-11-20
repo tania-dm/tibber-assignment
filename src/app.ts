@@ -1,13 +1,7 @@
-import express, { Application, Request, Response } from 'express'
+import express from 'express';
+import appSetup from './startup/init';
+import routerSetup from './startup/router';
 
-const app: Application = express()
-
-const PORT: number = 5000
-
-app.get('/healthcheck', (req: Request, res: Response) => {
-    res.send('Hello World')
-})
-
-app.listen(PORT, function () {
-    console.log(`App is listening on port ${PORT} !`)
-})
+const app = express();
+appSetup(app);
+routerSetup(app);
