@@ -4,7 +4,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/app.ts"
+    "dev": "nodemon src/app.ts",
+    "lint": "eslint",
+    "lint-fix": "eslint --fix"
   },
   "author": "",
   "license": "ISC",
@@ -13,10 +15,14 @@
     "express": "^4.21.1"
   },
   "devDependencies": {
+    "@eslint/js": "^9.15.0",
     "@types/express": "^5.0.0",
     "@types/node": "^22.9.1",
+    "eslint": "^9.15.0",
+    "globals": "^15.12.0",
     "nodemon": "^3.1.7",
     "ts-node": "^10.9.2",
-    "typescript": "^5.6.3"
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.15.0"
   }
 }
