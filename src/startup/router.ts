@@ -3,10 +3,10 @@ import ExecutionRouter from '../controllers/execution.controller'
 
 const routerSetup = (app: Express) =>
   app
-  .get('/healthcheck', (req: Request, res: Response) => {
-    res.send('Hello World!')
-  })
+    .get('/healthcheck', (req: Request, res: Response) => {
+      res.send('Hello World!')
+    })
 
-  .use('/tibber-developer-test', ExecutionRouter)
+    .use('/tibber-developer-test', ExecutionRouter)
 
 export default routerSetup

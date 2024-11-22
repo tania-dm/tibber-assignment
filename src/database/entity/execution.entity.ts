@@ -4,17 +4,17 @@ import IExecution from '../model/execution.model'
 @Entity()
 export class ExecutionEntity implements IExecution {
   @PrimaryGeneratedColumn()
-  id!: number;
+  id!: number
 
   @Column({ default: new Date().toISOString() })
-  timestamp!: string;
+  timestamp!: string
 
   @Column()
-  commands!: number;
+  commands!: number
 
   @Column()
-  result!: number;
+  result!: number
 
   @Column('decimal', { precision: 10, scale: 6 })
-  duration!: number;
+  duration!: number
 }

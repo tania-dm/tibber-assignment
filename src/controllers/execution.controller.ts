@@ -14,7 +14,7 @@ controller
 
     execution.commands = req.body.commands.length
     execution.result = coordinates.uniqueCoordinates.size
-    execution.duration = Number(((t1 - t0)/ 1000).toFixed(6))
+    execution.duration = Number(((t1 - t0) / 1000).toFixed(6))
 
     const newExecution = await useTypeORM(ExecutionEntity).save(execution)
     res.status(201).json(newExecution)
