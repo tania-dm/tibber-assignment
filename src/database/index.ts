@@ -5,7 +5,7 @@ let typeORMDB: DataSource
 export default async function typeORMConnect(): Promise<void> {
   const dataSource = new DataSource({
     type: 'postgres',
-    url: 'postgresql://postgres:example@localhost:5432/postgres',
+    url: process.env.POSTGRES_URL,
     entities: [
       `${__dirname}/entity/*.entity.js`,
       `${__dirname}/entity/*.entity.ts`,
