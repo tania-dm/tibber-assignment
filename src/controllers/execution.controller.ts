@@ -12,7 +12,7 @@ controller
     const coordinates = calculateAllCoordinates(req.body)
     const t1 = performance.now()
 
-    execution.commands = req.body.commands.length
+    execution.commands = req.body.commmands.length
     execution.result = coordinates.uniqueCoordinates.size
     execution.duration = Number(((t1 - t0) / 1000).toFixed(6))
 

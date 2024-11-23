@@ -5,8 +5,8 @@ type Coordinate = {
 
 type Direction = 'north' | 'south' | 'east' | 'west'
 
-export default function calculateAllCoordinates(body: { start: Coordinate, commands: { direction: Direction, steps: number }[] }) {
-  return body.commands.reduce((acc, current) => {
+export default function calculateAllCoordinates(body: { start: Coordinate, commmands: { direction: Direction, steps: number }[] }) {
+  return body.commmands.reduce((acc, current) => {
     const commandCoordinates = calculateCoordinatesPerCommand(acc.coordinates[acc.coordinates.length - 1], current.direction, current.steps)
 
     acc.coordinates = acc.coordinates.concat(commandCoordinates)
