@@ -1,4 +1,5 @@
 import { DataSource, EntityTarget, ObjectLiteral, Repository } from 'typeorm'
+import { ExecutionEntity } from './entity/execution.entity'
 
 let typeORMDB: DataSource
 
@@ -6,10 +7,7 @@ export default async function typeORMConnect(): Promise<void> {
   const dataSource = new DataSource({
     type: 'postgres',
     url: process.env.POSTGRES_URL,
-    entities: [
-      `${__dirname}/entity/*.entity.js`,
-      `${__dirname}/entity/*.entity.ts`,
-    ],
+    entities: [ExecutionEntity],
     synchronize: true,
   })
 

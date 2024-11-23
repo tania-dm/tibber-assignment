@@ -1,9 +1,10 @@
+import "reflect-metadata"
+import dotenvx from '@dotenvx/dotenvx'
 import express from 'express'
 import appSetup from './startup/init'
 import routerSetup from './startup/router'
-import dotenv from 'dotenv';
 
-dotenv.config();
+dotenvx.config()
 const app = express()
 appSetup(app)
 app.use(express.json())

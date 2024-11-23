@@ -6,13 +6,13 @@ export class ExecutionEntity implements IExecution {
   @PrimaryGeneratedColumn()
   id!: number
 
-  @Column({ default: new Date().toISOString() })
+  @Column({ type: 'timestamp', default: new Date().toISOString() })
   timestamp!: string
 
-  @Column()
+  @Column('integer')
   commands!: number
 
-  @Column()
+  @Column('integer')
   result!: number
 
   @Column('decimal', { precision: 10, scale: 6 })
