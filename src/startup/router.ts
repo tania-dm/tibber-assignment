@@ -1,5 +1,5 @@
 import { Express, Request, Response } from 'express'
-import ExecutionRouter from '../controllers/execution.controller'
+import executionController from '../controllers/execution.controller'
 
 const routerSetup = (app: Express) =>
   app
@@ -7,6 +7,6 @@ const routerSetup = (app: Express) =>
       res.send('Hello World!')
     })
 
-    .use('/tibber-developer-test', ExecutionRouter)
+    .use('/tibber-developer-test', executionController)
 
 export default routerSetup

@@ -1,4 +1,4 @@
-import "reflect-metadata"
+import 'reflect-metadata'
 import dotenvx from '@dotenvx/dotenvx'
 import express from 'express'
 import appSetup from './startup/init'
