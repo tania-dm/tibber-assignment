@@ -1,7 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm'
 import IExecution from '../model/execution.model'
 
-@Entity()
+@Entity('executions')
 export class ExecutionEntity implements IExecution {
   @PrimaryGeneratedColumn()
   id!: number
