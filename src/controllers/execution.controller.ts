@@ -16,8 +16,15 @@ controller
     execution.result = coordinates.uniqueCoordinates.size
     execution.duration = Number(((t1 - t0) / 1000).toFixed(6))
 
-    const newExecution = await useTypeORM(ExecutionEntity).save(execution)
-    res.status(201).json(newExecution)
+    try {
+      const newExecution = await useTypeORM(ExecutionEntity).save(execution)
+      res.status(201).json(newExecution)
+    }
+    catch (error) {
+      console.log('Unable to save record.')
+      console.error(error)
+      res.status(500).json(error)
+    }
   })
 
 export default controller
