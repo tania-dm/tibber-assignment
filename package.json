@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "dev": "dotenvx run --env-file=.env.local -- nodemon src/app.ts",
+    "dev": "cross-env NODE_ENV=development dotenvx run -- nodemon src/app.ts",
     "build": "rimraf dist && cross-env NODE_ENV=production tsup ./src/app.ts",
     "start": "node dist/app.js",
     "lint": "eslint",
@@ -16,7 +16,6 @@
   "dependencies": {
     "@dotenvx/dotenvx": "^1.24.5",
     "cross-env": "^7.0.3",
-    "dotenv": "^16.4.5",
     "express": "^4.21.1",
     "pg": "^8.13.1",
     "rimraf": "^6.0.1",

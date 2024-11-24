@@ -6,7 +6,10 @@ let typeORMDB: DataSource
 export default async function typeORMConnect(): Promise<void> {
   const dataSource = new DataSource({
     type: 'postgres',
-    url: process.env.POSTGRES_URL,
+    host: process.env.NODE_ENV === 'development' ? 'localhost' : process.env.POSTGRES_HOST,
+    username: process.env.POSTGRES_USER,
+    password: process.env.POSTGRES_PASSWORD,
+    database: process.env.POSTGRES_DB,
     entities: [ExecutionEntity],
     synchronize: true,
   })
