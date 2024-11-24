@@ -1,4 +1,4 @@
-type Coordinate = {
+export type Coordinate = {
   x: number
   y: number
 }
@@ -20,7 +20,7 @@ export default function calculateAllCoordinates(body: { start: Coordinate, commm
   } as { coordinates: Coordinate[], uniqueCoordinates: Set<string> })
 }
 
-function calculateCoordinatesPerCommand(
+export function calculateCoordinatesPerCommand(
   start: Coordinate,
   direction: Direction,
   steps: number,
@@ -39,7 +39,7 @@ function calculateCoordinatesPerCommand(
   return coordinates
 }
 
-function moveCoordinateByOne(start: Coordinate, direction: Direction): Coordinate {
+export function moveCoordinateByOne(start: Coordinate, direction: Direction): Coordinate {
   switch (direction) {
     case 'north':
       return {
@@ -64,6 +64,6 @@ function moveCoordinateByOne(start: Coordinate, direction: Direction): Coordinat
   }
 }
 
-function stringifyCoordinate(obj: Coordinate): string {
+export function stringifyCoordinate(obj: Coordinate): string {
   return `${obj.x},${obj.y}`
 }
