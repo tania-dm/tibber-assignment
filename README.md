@@ -5,6 +5,7 @@ The major technologies that were used to build this project are:
 
 - [NodeJS](https://nodejs.org/en/)
 - [Typescript](https://www.typescriptlang.org/)
+- [Express](https://expressjs.com/)
 - [TypeORM](https://typeorm.io/)
 - [Docker](https://www.docker.com/)
 - [Jest](https://jestjs.io/)
@@ -19,11 +20,15 @@ To run this project you will need the following things installed on your machine
 - NPM
 - Docker
 
+### Environment Configuration
+- Create `.env`: Copy `.env.template` to `.env`
+- Update `.env`: Fill in necessary environment variables
+
 ### Development mode
 Run
 ```
 npm i
-docker-compose up
+docker compose up
 npm run dev
 ```
 
