@@ -14,7 +14,7 @@ The major technologies that were used to build this project are:
 Instructions to get the project up and running.
 
 ### Prerequisites
-To run this project you will need the following things installed on your machine
+To run this project you will need the following dependencies
 
 - NodeJS
 - NPM
