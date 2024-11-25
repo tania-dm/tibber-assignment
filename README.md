@@ -49,7 +49,9 @@ This will create a docker container for the app and a PostgreSQL database server
 
 ## App monitoring and load testing
 ### Metrics
-You can use `/status` route to see realtime server metrics for the api.
+You can use `/status` route to see realtime server metrics for the API.
+
+![monitoring](https://github.com/user-attachments/assets/fe7d2081-b214-4178-9cb6-e87cb8a6c13d)
 
 ### Load testing
 First [install](https://grafana.com/docs/k6/latest/set-up/install-k6/#install-k6) k6 locally.
@@ -58,3 +60,4 @@ You can run a stress test using the following command:
 ```
 k6 run ./load-testing/api-test.js
 ```
+![stress-test](https://github.com/user-attachments/assets/9e34aaf3-502e-4c4f-9e60-f4cf5794e141)
