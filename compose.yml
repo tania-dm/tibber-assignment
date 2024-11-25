@@ -13,7 +13,8 @@ services:
     ports:
       - ${APP_PORT}:${APP_PORT}
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     profiles: [production]
 
   db:
@@ -26,6 +27,11 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     ports:
       - 5432:5432
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -d $$POSTGRES_DB -U $$POSTGRES_USER"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
     volumes:
       - pgdata:/var/lib/postgresql/data
 
