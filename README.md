@@ -9,6 +9,8 @@ The major technologies that were used to build this project are:
 - [TypeORM](https://typeorm.io/)
 - [Docker](https://www.docker.com/)
 - [Jest](https://jestjs.io/)
+- [Express Status Monitor](https://github.com/RafalWilinski/express-status-monitor)
+- [k6](https://grafana.com/docs/k6/latest/)
 
 ## Getting Started
 Instructions to get the project up and running.
@@ -44,3 +46,15 @@ Run
 `docker compose --profile production up`
 
 This will create a docker container for the app and a PostgreSQL database server.
+
+## App monitoring and load testing
+### Metrics
+You can use `/status` route to see realtime server metrics for the api.
+
+### Load testing
+First [install](https://grafana.com/docs/k6/latest/set-up/install-k6/#install-k6) k6 locally.
+
+You can run a stress test using the following command:
+```
+k6 run ./load-testing/api-test.js
+```
